@@ -14,7 +14,8 @@ var logger = require('./logger');
 var MMCONNECT_SERVER = process.env['MMCONNECT_SERVER'];
 var CARELINK_EU = MMCONNECT_SERVER === 'EU';
 var MMCONNECT_SERVERNAME = process.env['MMCONNECT_SERVERNAME'];
-var DEFAULT_CARELINKSERVERADDRESS = MMCONNECT_SERVERNAME || (CARELINK_EU ? "carelink.minimed.eu" : "carelink.minimed.com");
+//var DEFAULT_CARELINKSERVERADDRESS = MMCONNECT_SERVERNAME || (CARELINK_EU ? "carelink.minimed.eu" : "carelink.minimed.com");
+var DEFAULT_CARELINKSERVERADDRESS = "carelink.minimed.eu";
 
 var DEFAULT_COUNTRYCODE = process.env['MMCONNECT_COUNTRYCODE'] || 'gb';
 var DEFAULT_LANGCODE = process.env['MMCONNECT_LANGCODE'] || 'en';
@@ -45,7 +46,7 @@ var Client = exports.Client = function (options) {
 
   var getCurrentRole = async function() {
     var resp = (await axiosInstance.get(CARELINK_ME_URL));
-    if (resp && resp.data && resp.data.role) {
+    if (resp && resp.data && resp.data.role) {carelinkServerAddress
       return resp.data.role.toUpperCase( );
     }
   }

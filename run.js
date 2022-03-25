@@ -22,6 +22,11 @@ function readEnv(key, defaultVal) {
 }
 
 var config = {
+//  username: 'josevbellver',
+//  password: '9Moixent',
+//  nsHost: 'damia.herokuapp.com',
+//  nsBaseUrl: 'https://damia.herokuapp.com',
+//  nsSecret: 'diabetesdamia2013',
   username: readEnv('CARELINK_USERNAME'),
   password: readEnv('CARELINK_PASSWORD'),
   nsHost: readEnv('WEBSITE_HOSTNAME'),
